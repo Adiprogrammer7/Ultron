@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="text-center bg-dark text-light p-2 mb-4 rounded">
+        <h1>Techmeme Search</h1>
+    </div>
+
+    <form action="" class="form-inline mt-4 mb-4" method="POST">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{form.search(class= 'form-control', placeholder= 'Enter term to search')}}
+            {{form.submit(class= 'btn btn-outline-primary')}}
+        </div>
+    </form>
+
+    {% if result %}
+        {% for key, value in result.items() %}
+            <a href="{{value['author_link']}}" target="_blank" class="text-muted">
+                <p>{{value['author']}}</p>
+            </a>
+            <div class="border-bottom mb-4">
+                <a href="{{value['heading_link']}}" target="_blank">
+                    <h2>{{key}}</h2>
+                </a>
+            </div>
+        {% endfor %}
+    {% endif %}
+ 
+{%endblock%}

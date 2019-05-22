@@ -1,0 +1,34 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="jumbotron text-center mb-4">
+        <h1>Ultron 0.1</h1>
+        <p class="lead">Content aggregator that can aggregate data from reddit, techmeme, verge and techcruch. Still in developing embryo but still got some guts.</p>
+    </div>
+
+    <div id="seaction">
+        <div class="row">
+            <div class="col-sm-4 text-center rounded">
+                <a href="reddit_search" class="btn p-4 shadow m-2">
+                    <i class="fab fa-reddit-square"></i>
+                    <h3>Reddit Search</h3>
+                    <p>Performs an universal reddit search for a specific term.</p>
+                </a>
+            </div>
+            <div class="col-sm-4 text-center rounded">
+                <a href="techmeme_search" class="btn p-4 shadow m-2">
+                    <i class="fab fa-searchengin"></i>
+                    <h3>Techmeme Search</h3>
+                    <p>Performs an universal techmeme search for a specific term.</p>
+                </a>
+            </div>
+            <div class="col-sm-4 text-center rounded">
+                <a href="news" class="btn p-4 shadow m-2">
+                    <i class="far fa-newspaper"></i>
+                    <h3>Tech News</h3>
+                    <p>Scrapes out some news from verge and techcrunch.</p>
+                </a>
+            </div>
+
+        </div>
+    </div>
+{%endblock%}

@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="text-center bg-dark text-light p-2 mb-4 rounded">
+        <h1>Reddit Search</h1>
+    </div>
+
+    <form action="" class="form-inline mt-4 mb-4" method="POST">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{form.search(class= 'form-control', placeholder= 'Enter term to search')}}
+            {{form.time_select(class= 'form-control')}}
+            {{form.submit(class= 'btn btn-outline-primary')}}
+        </div>
+    </form>
+
+    {%if data %}
+        {% for key, value in data.items() %}
+            <div class="border-bottom mb-4">
+                <a href="{{value['link']}}" target="_blank">
+                    <h2>{{key}}</h2>
+                </a>
+                <p>Ups: {{value['ups']}}, Downs: {{value['downs']}}</p>
+            </div>
+        {% endfor %}
+    {%endif%}
+
+{%endblock%}

@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class="text-center bg-dark text-light p-2 mb-4 rounded">
+        <h1>Tech News</h1>
+    </div>
+
+    {% if verge_data and techcrunch_data %}
+        <h1 class="mb-4">News from verge:</h1>
+        {% for key, value in verge_data.items() %}
+            <div class="border-bottom mb-3">
+                <a href="{{value}}" target="_blank">
+                    <h4>{{key}}</h4>
+                </a>
+            </div>
+        {% endfor %}
+
+        <h1 class="mb-4 mt-4">News from techcrunch</h1>
+        {% for key, value in techcrunch_data.items() %}
+            <div class="border-bottom mb-3">
+                <a href="{{value}}" target="_blank">
+                    <h4>{{key}}</h4>
+                </a>
+            </div>
+        {% endfor %}
+
+    {% else %}
+            <h3>Sorry, something went wrong while fetching data from verge and techcrunch.</h3>
+    
+    {% endif %}
+
+{%endblock%}
