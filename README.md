@@ -1,2 +1,2 @@
-# Ultron-0.1
+# Ultron-aggregator
 A content aggregator still in developing embryo.
